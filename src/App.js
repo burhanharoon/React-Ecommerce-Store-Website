@@ -53,7 +53,7 @@ const products = [
 ]
 
 const initialState = {
-  basket:[]
+  basket: []
 }
 
 function App() {
