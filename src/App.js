@@ -4,6 +4,7 @@ import { Header } from "./Components/Header";
 import { Home } from "./Components/Home";
 import { Checkout } from "./Components/Checkout";
 import { reducer } from "./reducer";
+import { ProductDisc } from "./Components/ProductDisc";
 
 export const BasketContext = React.createContext()
 
@@ -71,6 +72,7 @@ function App() {
               <Checkout />
             </Route>
             <Route path="/" component={Home} exact />
+            <Route path="/products/:id" component={ProductDisc} />
           </Switch>
         </Router>
       </div>

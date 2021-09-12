@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { BasketContext } from '../App';
 
 export const Products = () => {
@@ -20,6 +21,7 @@ export const Products = () => {
   }
 
   return (
+
     <div className='flex flex-wrap justify-center'>
       {basketContext.products.map(product => {
         return (
@@ -30,8 +32,7 @@ export const Products = () => {
               <img src={product.img} alt='product' className="h-1/3 object-contain" />
 
               <div className="card-body">
-                <h2 className="card-title h-3/6 line-clamp-3">{product.title} </h2>
-
+                <Link to={`/products/${product.id}`}><h2 className="card-title h-3/6 line-clamp-3">{product.title} </h2></Link>
                 <div className='flex'>
                   {rating = new Array(product.rating)
                     .fill()
