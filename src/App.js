@@ -70,9 +70,7 @@ function App() {
             <Route path='/checkout'>
               <Checkout />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+            <Route path="/" component={Home} exact />
           </Switch>
         </Router>
       </div>
