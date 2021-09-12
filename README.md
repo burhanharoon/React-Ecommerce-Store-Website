@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+**Typical Ecommerce Website**
+
+ - It is a ecommerce website built using React and TailwindCSS.
+ - It can do various functionalities like:
+ - Adding an item to the basket [Add to cart] done using useReducer  hook.
+ - Checking added items in the Checkout page done using the useContext API.
+ - This project needs a lot of other functionalities and improvements and currently im working on it :)
+ - If you have any suggestions please email me at mirzaburhan0007@gmail.com
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
