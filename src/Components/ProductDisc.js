@@ -9,7 +9,7 @@ export const ProductDisc = ({ match }) => {
 
     return (
         <div className="p-10 flex flex-col ">
-            <Link to="/"><button className="btn btn-blue">Go back</button></Link>
+            <Link to="/"><button className="btn btn-blue m-3">Go back</button></Link>
             <div>{product.title}</div>
         </div>
     )
