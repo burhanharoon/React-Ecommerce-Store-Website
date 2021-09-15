@@ -69,7 +69,7 @@ function App() {
           <Header />
           <Switch>
             <Route path='/checkout'>
-              <Checkout />
+              <Checkout title={title} />
             </Route>
             <Route path="/" component={Home} exact />
             <Route path="/products/:id" component={ProductDisc} />
