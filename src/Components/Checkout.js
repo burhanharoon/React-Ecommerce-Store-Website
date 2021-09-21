@@ -1,11 +1,10 @@
 import React from 'react'
 import "./checkout.css";
 import Subtotal from "./Subtotal";
-import CheckoutProduct  from "./CheckoutProduct";
+import CheckoutProduct from "./CheckoutProduct";
+import { connect } from 'react-redux';
 
-const Checkout = () => {
-
-    // const basketContext = useContext(BasketContext)
+const Checkout = ({ basket }) => {
 
     return (
 
@@ -25,7 +24,7 @@ const Checkout = () => {
                             <li className="subtotal">Subtotal</li>
                         </ul>
                     </div>
-                    {/* {
+                    {
                         basket?.map(product => {
                             return (
                                 <CheckoutProduct
@@ -37,7 +36,7 @@ const Checkout = () => {
                                 />
                             )
                         })
-                    } */}
+                    }
                 </div>
                 <Subtotal />
             </main>
@@ -45,4 +44,10 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+const mapStateToProps = state => {
+    const { basket } = state
+    return { basket }
+  }
+
+  
+export default connect(mapStateToProps)(Checkout)

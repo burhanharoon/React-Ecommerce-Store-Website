@@ -1,12 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const CheckoutProduct = ({ id, img, title, price, rating }) => {
+const CheckoutProduct = ({ id, img, title, price, rating, basket, dispatch }) => {
 
-    // let ratings;
-    // const basketContext = useContext(BasketContext)
-    // const deleteFromBasket = (id) => {
-    //     basketContext.basketDispatch({ type: 'DELETE_FROM_BASKET', payload: id })
-    // }
+    let ratings
+    const deleteFromBasket = (id) => {
+        dispatch({
+            type: 'DELETE_FROM_BASKET',
+            payload: id
+        })
+    }
 
     return (
         <div className="basket-product">
@@ -24,10 +27,15 @@ const CheckoutProduct = ({ id, img, title, price, rating }) => {
             </div>
             <div className="subtotal">{price}</div>
             <div className="remove">
-                {/* <button onClick={() => deleteFromBasket(id)}>Remove</button> */}
+                <button onClick={() => deleteFromBasket(id)}>Remove</button>
             </div>
         </div>
     )
 }
 
-export default CheckoutProduct
+const mapStateToProps = state => {
+    const { basket } = state
+    return { basket }
+}
+
+export default connect(mapStateToProps)(CheckoutProduct)

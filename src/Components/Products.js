@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const products = [
@@ -46,21 +47,24 @@ const products = [
   }
 ]
 
-const Products = () => {
+const Products = ({ dispatch }) => {
 
   let rating;
 
-  // //  Add to basket function using useContext and useReducer 
-  // const addToBasket = (product) => {
-  //   const newItem = {
-  //     id: product.id,
-  //     img: product.img,
-  //     title: product.title,
-  //     price: product.price,
-  //     rating: product.rating
-  //   }
-  //   basketContext.basketDispatch({ type: 'ADD_TO_BASKET', payload: newItem })
-  // }
+  //  Add to basket function using useContext and useReducer 
+  const addToBasket = (product) => {
+    const newItem = {
+      id: product.id,
+      img: product.img,
+      title: product.title,
+      price: product.price,
+      rating: product.rating
+    }
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      payload: newItem
+    })
+  }
 
   return (
 
@@ -88,7 +92,7 @@ const Products = () => {
                     <small>$</small>
                     <strong>{product.price}</strong>
                   </p>
-                  {/* <button onClick={() => addToBasket(product)} className="btn btn-info">Add to cart</button> */}
+                  <button onClick={() => addToBasket(product)} className="btn btn-info">Add to cart</button>
                 </div>
 
               </div>
@@ -99,4 +103,8 @@ const Products = () => {
   )
 }
 
-export default Products
+const mapStateToProps = state => {
+  return { state }
+}
+
+export default connect(mapStateToProps)(Products)

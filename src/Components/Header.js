@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ basket }) => {
 
   return (
     <div className="sticky top-0 z-10">
@@ -35,7 +36,7 @@ const Header = () => {
           </button>
           <Link to="/checkout">
             <button className="btn btn-square btn-ghost relative">
-              <div className="indicator-item badge absolute top-0 left-0">LENGTH 0</div>
+              <div className="indicator-item badge absolute top-0 left-0">{basket.length}</div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -59,4 +60,9 @@ const Header = () => {
   );
 };
 
-export default Header
+const mapStateToProps = state => {
+  const { basket } = state
+  return { basket }
+}
+
+export default connect(mapStateToProps)(Header)
