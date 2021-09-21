@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+### Visit the deployed website at -> https://hungry-poitras-476b60.netlify.app/
+
 **Typical Ecommerce Website**
 
  - It is a ecommerce website built using React and TailwindCSS.
