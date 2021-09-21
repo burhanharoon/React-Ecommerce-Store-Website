@@ -5,7 +5,6 @@ import Home from "./Components/Home";
 import Checkout from "./Components/Checkout";
 import ProductDisc from "./Components/ProductDisc";
 
-
 const App = () => {
 
   return (
