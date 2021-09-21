@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
-import { BasketContext } from '../App';
+import React from 'react'
 
-export const CheckoutProduct = ({ id, img, title, price, rating }) => {
+const CheckoutProduct = ({ id, img, title, price, rating }) => {
 
-    let ratings;
-    const basketContext = useContext(BasketContext)
-    const deleteFromBasket = (id) => {
-        basketContext.basketDispatch({ type: 'DELETE_FROM_BASKET', payload: id })
-    }
+    // let ratings;
+    // const basketContext = useContext(BasketContext)
+    // const deleteFromBasket = (id) => {
+    //     basketContext.basketDispatch({ type: 'DELETE_FROM_BASKET', payload: id })
+    // }
 
     return (
         <div className="basket-product">
@@ -25,8 +24,10 @@ export const CheckoutProduct = ({ id, img, title, price, rating }) => {
             </div>
             <div className="subtotal">{price}</div>
             <div className="remove">
-                <button onClick={() => deleteFromBasket(id)}>Remove</button>
+                {/* <button onClick={() => deleteFromBasket(id)}>Remove</button> */}
             </div>
         </div>
     )
 }
+
+export default CheckoutProduct

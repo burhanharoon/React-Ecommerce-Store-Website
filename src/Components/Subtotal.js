@@ -1,31 +1,30 @@
-import React, { useContext } from 'react'
-import { BasketContext } from '../App';
+import React from 'react'
 import CurrencyFormat from 'react-currency-format';
 
-export const Subtotal = () => {
+ const Subtotal = () => {
 
     let total = 0;
-    const basketContext = useContext(BasketContext)
-    const totalValueOfBasket = () => {
-        if (basketContext.state.basket.length > 0) {
+    // const basketContext = useContext(BasketContext)
+    // const totalValueOfBasket = () => {
+    //     if (basketContext.state.basket.length > 0) {
 
-            basketContext.state.basket.map(product => {
-                return total += product.price;
-            })
-            console.log(total);
-            return total;
-        }
-        else {
-            return total;
-        }
-    }
+    //         basketContext.state.basket.map(product => {
+    //             return total += product.price;
+    //         })
+    //         console.log(total);
+    //         return total;
+    //     }
+    //     else {
+    //         return total;
+    //     }
+    // }
 
     return (
         // Used -> npm i react-currency-format
         <CurrencyFormat renderText={(value) => (
             <aside>
                 <div className="summary">
-                    <div className="summary-total-items"><span className="total-items"></span> Items in your Bag: {basketContext.state.basket.length}</div>
+                    {/* <div className="summary-total-items"><span className="total-items"></span> Items in your Bag: {basketContext.state.basket.length}</div> */}
                     <div className="summary-subtotal">
                         <div className="subtotal-title">Subtotal</div>
                         <div className="subtotal-value final-value" id="basket-subtotal">{value}</div>
@@ -55,10 +54,12 @@ export const Subtotal = () => {
 
         )}
             decimalScale={2}
-            value={totalValueOfBasket()}
+            // value={totalValueOfBasket()}
             displayType={'text'}
             thousandSeparator={true}
             prefix={'$'}
         />
     )
 }
+
+export default Subtotal

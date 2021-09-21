@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
-import { BasketContext } from '../App';
+import React from 'react'
 import "./checkout.css";
-import { Subtotal } from "./Subtotal";
-import { CheckoutProduct } from "./CheckoutProduct";
+import Subtotal from "./Subtotal";
+import CheckoutProduct  from "./CheckoutProduct";
 
-export const Checkout = () => {
+const Checkout = () => {
 
-    const basketContext = useContext(BasketContext)
+    // const basketContext = useContext(BasketContext)
 
     return (
 
@@ -26,8 +25,8 @@ export const Checkout = () => {
                             <li className="subtotal">Subtotal</li>
                         </ul>
                     </div>
-                    {
-                        basketContext.state.basket.map(product => {
+                    {/* {
+                        basket?.map(product => {
                             return (
                                 <CheckoutProduct
                                     id={product.id}
@@ -38,10 +37,12 @@ export const Checkout = () => {
                                 />
                             )
                         })
-                    }
+                    } */}
                 </div>
                 <Subtotal />
             </main>
         </div>
     )
 }
+
+export default Checkout

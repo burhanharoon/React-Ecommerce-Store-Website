@@ -1,11 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
-import { BasketContext } from '../App';
 
-export const Header = () => {
-
-  const basketContext = useContext(BasketContext)
-
+const Header = () => {
 
   return (
     <div className="sticky top-0 z-10">
@@ -39,7 +35,7 @@ export const Header = () => {
           </button>
           <Link to="/checkout">
             <button className="btn btn-square btn-ghost relative">
-              <div className="indicator-item badge absolute top-0 left-0">{basketContext.state.basket.length}</div>
+              <div className="indicator-item badge absolute top-0 left-0">LENGTH 0</div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -62,3 +58,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header

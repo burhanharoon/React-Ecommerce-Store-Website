@@ -1,7 +1,7 @@
 import React from 'react'
-import { Products } from "./Products";
+import Products from "./Products";
 
-export const Home = () => {
+ const Home = () => {
     return (
         <div >
             <h1 className="text-3xl font-bold flex justify-center pt-6">
@@ -11,3 +11,5 @@ export const Home = () => {
         </div>
     )
 }
+
+export default Home

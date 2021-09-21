@@ -23,8 +23,6 @@ export const reducer = (state, action) => {
             basket: newBasket
         }
     }
-    else {
-        throw new Error('no mathing action')
-    }
+    return state
 }
 
